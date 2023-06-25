@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.frame {
+  background-color: #000;
+  background-image: url(../img/nebula.jpg);
+  background-position-y: 0;
+  aspect-ratio: 16/9;
+  position: relative;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+}
+.frame .player {
+  position: absolute;
+  width: 43px;
+  height: 33px;
+  bottom: 32px;
+  left: calc(50% - 32px);
+  background-image: url(../img/ship.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 42;
+}
+.frame .player::before {
+  position: absolute;
+  content: "";
+  left: 28px;
+  right: 28px;
+  top: -8px;
+  bottom: 50%;
+  background-color: #000;
+}
+.frame .enemy {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  transition: scale 0.5s, opacity 0.5s;
+  z-index: 1;
+  background-image: url(../img/enemy1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform-origin: center;
+}
+.frame .enemy.enemy2 {
+  background-image: url(../img/enemy2.png);
+  width: 42px;
+  height: 42px;
+}
+.frame .enemy.exploding {
+  mix-blend-mode: multiply;
+  scale: 1.25;
+  opacity: 0;
+}
+.frame .enemy.boss {
+  width: 230px;
+  height: 127px;
+  background-image: url(../img/boss.png);
+  z-index: 3;
+}
+.frame .bullet {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3333333333);
+  border: 2px solid orangered;
+  border-radius: 100%;
+}
+
+.menu {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu button {
+  all: unset;
+  color: aliceblue;
+  border: 2px solid;
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.5em 0.75em;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dev {
+  z-index: 42;
+  padding: 1em;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */
