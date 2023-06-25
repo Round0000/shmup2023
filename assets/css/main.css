@@ -85,17 +85,39 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 1em;
   align-items: center;
+  color: aliceblue;
 }
 .menu button {
   all: unset;
-  color: aliceblue;
+  color: inherit;
   border: 2px solid;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   display: block;
   padding: 0.5em 0.75em;
   background-color: rgba(0, 0, 0, 0.6);
+}
+.menu label {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.menu label input {
+  all: unset;
+  width: 1em;
+  height: 1em;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+}
+.menu label input:checked {
+  background-color: rgba(186, 218, 85, 0.8666666667);
+}
+.menu label input:not(:checked) + span {
+  text-decoration: line-through;
 }
 
 .dev {
@@ -105,6 +127,10 @@ body {
   inset: 0;
   pointer-events: none;
   user-select: none;
+  display: none;
+}
+
+.audio {
   display: none;
 }
 

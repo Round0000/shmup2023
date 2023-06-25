@@ -99,17 +99,43 @@ body {
     inset: 0;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 1em;
     align-items: center;
+    color: aliceblue;
 
     button {
         all: unset;
-        color: aliceblue;
+        color: inherit;
         border: 2px solid;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         display: block;
         padding: .5em .75em;
         background-color: #0009;
+    }
+
+    label {
+        padding: .5em;
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        input {
+            all: unset;
+            width: 1em;
+            height: 1em;
+            background-color: #fff9;
+            border: 2px solid #0009;
+
+            &:checked {
+                background-color: #bada55dd;
+            }
+        }
+
+        input:not(:checked) + span {
+            text-decoration: line-through;
+        }
     }
 }
 
@@ -120,5 +146,9 @@ body {
     inset: 0;
     pointer-events: none;
     user-select: none;
+    display: none;
+}
+
+.audio {
     display: none;
 }

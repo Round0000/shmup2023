@@ -39,6 +39,7 @@ const ui = {
   menu: document.querySelector('.menu'),
   player: document.querySelector(".player"),
   enemies: [],
+  audio: document.querySelector('.audio')
 };
 
 const sizes = {
@@ -240,5 +241,10 @@ ui.menu.addEventListener('click', e => {
             game.playing = true;
         }, 500);
         ui.menu.classList.add('hidden')
+        if (settings.music) {
+          ui.audio.play()
+        }
+    } else if (document.querySelector('.musicChecked:checked')) {
+      settings.music = true;
     }
 })
